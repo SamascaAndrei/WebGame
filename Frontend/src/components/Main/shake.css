@@ -1,0 +1,15 @@
+@keyframes example {
+    0% {translate:0}
+    33% {translate:25px}
+    66% {translate:-25px}
+    100% {translate:0}
+  }
+
+  .shake {
+    animation: example 200ms ease-in-out;
+  }
+
+  .dead{
+    rotate:1 0 0 180deg;
+    transition:all 1000ms;
+  }

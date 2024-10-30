@@ -1,0 +1,82 @@
+.inventory { 
+    --preview-size: 40%;
+    flex: 1;
+    position: relative;
+}
+
+.left {
+    position: absolute;
+    inset: 0 var(--preview-size) 0 0;
+    margin: .75em;
+
+    overflow-y: auto;
+}
+
+.item-list {
+    display: flex;
+    /* justify-content: space-around; */
+    flex-wrap: wrap;
+    gap: 1em;
+    list-style: none;
+}
+
+.item {
+    flex: 0 0 30%;
+    max-width: 10em;
+    aspect-ratio: 1;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    position: relative;
+}
+
+.item:hover {
+    cursor: pointer;
+}
+
+.item::before {
+    position: absolute;
+    content: attr(data-name);
+    inset: 0 0 auto 0;
+    text-align: center;
+    color: crimson;
+}
+
+.item::after {
+    position: absolute;
+    content: attr(data-amount);
+    inset: auto 5% 0 auto;
+    text-align: center;
+    font-size: larger;
+    color: gray;
+}
+
+.item img {
+    object-fit:fill;
+    height: 100%;
+    width: 100%;
+}
+
+.right {
+    position: absolute;
+    inset: 0 0 0 calc(100% - var(--preview-size));
+}
+
+.item-details h1 {
+    text-align: center;
+}
+
+.item-details img {
+    max-width: 100%;
+    padding: 0 1em;
+    margin: 0 auto;
+    display: block;
+}
+
+.stats > * {
+    position: relative;
+}
+
+.stats > *::after {
+    position: absolute;
+    inset: auto 2em auto auto;
+    content: attr(data-value);
+}

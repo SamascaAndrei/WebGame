@@ -1,0 +1,9 @@
+.stats > * {
+    position: relative;
+}
+
+.stats > *::after {
+    position: absolute;
+    inset: auto 2em auto auto;
+    content: attr(data-value);
+}
